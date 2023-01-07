@@ -1,0 +1,23 @@
+use("platzi_store")
+
+db.products.drop()  // drop() limpia la coleccion, asi que aqui lo que hacemos es limpiar la coleccion antes de hacer mas inserts
+
+db.products.insertMany([
+    {
+        _id: 1,
+        name: "Product 1",
+        price: 1000
+    },
+    {
+        _id: 2,
+        name: "Product 2",
+        price: 10000
+    },
+    {
+        _id: 3,
+        name: "Product 3",
+        price: 100
+    },
+])
+
+db.products.find()

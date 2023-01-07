@@ -1,0 +1,15 @@
+version: '3.9' # Esta no es la version de docker como tal, sino la version de la documentacion de este formato yml que vamos a utilizar
+
+services:
+  # Los servicios son precisamente donde corremos una api, una db, una cola de tareas en celery o redis, etc
+  mongodb:
+    # El nombre del servicio si no tiene nada que ver, puede ser "mongodb", "mydb", etc
+    image: mongo:5.0 # La imagen es importante ya que es lo que va a usar docker para el servicio
+    ports:
+      - 27017:27017 # Este si es importante usarlo con estos puertos, ya que este puerto es por el cual normalmente mongo recibe su comunicacion
+    environment:
+      # Aqui especificamos el username y el password de esta db mongo, ya que seria como correrla en la maquina y pues necesita esos parametros
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root123
+    volumes:
+      - ./mongo_data:/data/db

@@ -1,0 +1,3 @@
+use("platzi_store")
+
+db.products.find() // Esto devolvera todos los documentos que esten en la coleccion products

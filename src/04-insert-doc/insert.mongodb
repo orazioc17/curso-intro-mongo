@@ -1,0 +1,12 @@
+// Si intentamos usar una db que no existe, mongo va a crearla
+use("store_platzi")
+
+db.products.insertOne({
+    name: "Product 1",  // Si no indicamos el id, mongo lo agregara automaticamente
+    price: 1000
+})
+
+db.products.insertOne({
+    name: "Product 2",
+    price: 100
+})

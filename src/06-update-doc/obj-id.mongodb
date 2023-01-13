@@ -1,0 +1,12 @@
+use("platzi_store")
+
+db.products.updateOne(
+    // query
+    {_id: ObjectId("63c0bc791bbd02f18ebdafe9")},  // ESta es la forma de hacer query con un ObjectId
+    // change => operators
+    {
+        $inc: {
+            price: 10000
+        }
+    }
+)

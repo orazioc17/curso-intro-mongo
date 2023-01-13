@@ -1,0 +1,15 @@
+use("platzi_store")
+
+db.products.find()
+
+db.products.updateOne(
+    // query
+    { _id: 2 },
+    // change => operator
+    {
+        $set: {  // $set: Sets the value of a field in a document
+            name: "Change name"
+            // Aqui podria indicar que otro campo cambiar o incluso agregar campos nuevos
+        }
+    }
+)
